@@ -30,6 +30,7 @@ export class CommentForm extends React.Component{
     }
     onSubmit =(e, action)=>{
         e.preventDefault();
+        //console.log(e.target.name);
         const username = this.props.auth.username;
         if(!this.state.text){
             const error = 'Please provide a comment!'
@@ -38,23 +39,23 @@ export class CommentForm extends React.Component{
             const error = 'Currently there is no user login. If you dont have an account please create one or just login with your username and password';
             this.setState(()=>({error}));
         }else{
-            switch(action){
-                case 'submitComment':
-                    this.props.onSubmit({
-                        text:this.state.text,
-                        username:username,
-                        events: this.soundManager.getEvents(),
-                        createAt:moment().valueOf(),
-                        rate:[username]
-                    });
-                case 'shareComment':
-                    this.props.onShare({
-                        id: uuidv4(),
-                        text:this.state.text,
-                        username:username,
-                        events: this.soundManager.getEvents(),
-                    })
-                default:     
+            if(e.target.name =='submit'){
+                this.props.onSubmit({
+                    text:this.state.text,
+                    username:username,
+                    events: this.soundManager.getEvents(),
+                    createAt:moment().valueOf(),
+                    rate:[username]
+                });
+            }
+            else{
+                this.props.onShare({
+                    id: uuidv4(),
+                    text:this.state.text,
+                    username:username,
+                    events: this.soundManager.getEvents(),
+                })
+
             }
             this.setState(()=>({
                 error:'',
@@ -82,7 +83,7 @@ export class CommentForm extends React.Component{
                 <h2 className="heading-secondary">Comment</h2>
                 </div>
                 <div className="comment__share">
-                    <button className="btn  btn--blue" onClick={(e)=>{
+                    <button name="share" className="btn  btn--blue" onClick={(e)=>{
                         this.onSubmit(e,'shareComment')
                     }}><svg x="0px" y="0px" viewBox="0 0 64 64" enableBackground="new 0 0 64 64"  stroke="#594389">
                     <circle fill="none"  strokeWidth="3" strokeMiterlimit="10" cx="51" cy="13" r="12"/>
@@ -109,6 +110,7 @@ export class CommentForm extends React.Component{
                     <div className="col-1-of-4">
                         <input type="reset" className="btn  btn--blue form__button"></input>
                         <button 
+                        name="submit"
                         className="btn btn--purple form__button"
                         onClick ={(e)=>{
                             this.onSubmit(e,'submitComment')
