@@ -1,0 +1,16 @@
+.comment-box{
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: $back-color;
+    border:none;
+    border-radius: 2px;
+    padding: 1.5rem 2rem;
+    width:90%;
+    resize: none;
+    margin: auto 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:focus{
+        outline: none;
+    }
+}

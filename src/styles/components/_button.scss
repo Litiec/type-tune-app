@@ -1,0 +1,41 @@
+.btn{
+    &,
+    &:link,
+    &:visited{
+        padding:1.2rem 4rem;
+        border-radius:10rem;
+        border:none;
+        font-family: inherit;
+        font-size: 2rem;
+        font-weight: 700;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.11);
+        color:$font-color;
+        cursor:pointer;
+        transition: all .2s;
+    }
+    &:disabled{
+        opacity: .2;
+    }
+    &:hover{
+        transform:translateY(-.3rem); 
+    }
+    &:active{
+        outline: none;
+        transform: translateY(-1px);
+    }
+    &:focus{
+        outline: none;
+    }
+    &--blue{
+        background-color: rgba($deco-colorA,.3);
+
+    }
+    &--purple{
+        background-color: rgba($deco-colorB,.3);
+        
+    }
+    &--red{
+        background-color: rgba(red,.3);
+        color:white;
+    }
+}

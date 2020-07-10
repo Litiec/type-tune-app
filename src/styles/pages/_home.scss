@@ -1,0 +1,161 @@
+
+.comment{
+    position:relative;
+    background-image: linear-gradient(
+        245deg,
+        rgba($grandient-colorA,1),
+        rgba($grandient-colorB,.5)
+    );
+    width:80%;
+    margin:5rem auto;
+    border-radius: 4px;
+    @include respond(phone){
+        width:95%;
+    }
+
+    &__form{
+        padding: 1.5rem 3rem;
+
+    }
+    &__share{
+        position: absolute;
+        top:2rem;
+        right:3rem;
+        
+
+        svg{
+            width:3rem;
+            &:hover{
+                stroke:greenyellow;
+            }
+            
+        }
+    }
+    &__box-container{
+        position: relative;
+        height:15rem;
+
+        &-layout{
+            position: absolute;
+            transform: translateY(-10%);
+            height:90%;
+            width:100%;
+            background-color: rgba($sub-color, .3);
+            z-index: -10;
+            -webkit-clip-path:polygon(0 0, 100% 0, 100% 100%, 60% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 60% 100%);
+        }
+    }
+    &__msg{
+        background-color:rgba(red, 0.25);
+        &-text{
+            color:red;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.6rem;
+            margin-left: 1rem;
+            padding: 1.2rem;
+        }
+    }
+    &__login{
+        color:$font-color;
+        text-decoration: none;
+    }
+
+}
+
+.filter{
+    width:80%;
+    margin:5rem auto;
+    border-radius: 4px;
+    @include respond(phone){
+        width:95%;
+    }
+}
+
+.dashboard{
+    background-image: linear-gradient(
+        245deg,
+        rgba($grandient-colorA,1),
+        rgba($grandient-colorB,.5)
+    );
+    width:80%;
+    margin:5rem auto;
+    border-radius: 4px;
+    @include respond(phone){
+        width:95%;
+    }
+    &__comment{
+        padding:3rem
+    }
+    &__func{
+        padding:3rem;
+        text-align: center;
+    }
+}
+.logMessage{
+    background-color:rgba(red, 0.25);
+        &-text{
+            color:red;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.6rem;
+            margin-left: 1rem;
+            padding: 1.2rem;
+        }
+    
+}
+.logform{
+    background-image: linear-gradient(
+        245deg,
+        rgba($grandient-colorA,1),
+        rgba($grandient-colorB,.5)
+    );
+    width:50%;
+    margin:5rem auto;
+    border-radius: 4px;
+    text-align: center;
+    padding: 3rem;
+    &__form{
+        position:relative;
+        
+        &-input{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 3rem auto;
+            font-size: 1.5rem;
+            color:inherit;
+            padding: 1.5rem 2rem;
+            border-radius: 2px;
+            background-color: rgba($back-color, .5);
+            border:none;
+            border-bottom: 3px solid transparent;
+            width: 90%;
+            display: block;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.11);
+        }
+        &-button{
+            margin:1.5rem
+        }
+    }
+}
+.guessingGame{
+    background-image: linear-gradient(
+    245deg,
+    rgba($grandient-colorA,1),
+    rgba($grandient-colorB,.5)
+    );
+    width:60%;
+    margin:5rem auto;
+    border-radius: 4px;
+    padding: 3rem;
+    &__textBox{
+        width: 60%;
+        margin: 3rem auto
+    }
+    &__text{
+        font-size: 6rem;
+        color:$font-color;
+        padding: 1.5rem;
+    }
+    .comment-box{
+        width:100%;
+    }
+}
