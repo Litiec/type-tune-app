@@ -5,7 +5,7 @@ import {setUsernameFilter, sortByDate, sortByRate} from '../actions/filters'
 const CommentListFilters = (props)=>(
     
     <div className="row filter">
-        <div className="col-1-of-4">
+        <div className="col-2-of-4">
             <input className="comment-box" placeholder="search:username" type="text" value={props.filters.username} onChange={(e)=>{
                 props.dispatch(setUsernameFilter(e.target.value));
             }}/>
