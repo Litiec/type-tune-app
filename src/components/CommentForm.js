@@ -19,7 +19,7 @@ export class CommentForm extends React.Component{
     onTextChange = (e)=>{ 
         const text = e.target.value;
         const reg =/[a-z]|\d/;
-        if(e.target.value[text.length-1].match(reg)){
+        if(e.target.value[text.length-1].match(reg)||e.target.value[text.length-1]===" "){
             if(this.state.text.length<text.length){
                 this.soundManager.regEvents(text.charCodeAt(text.length-1))
                 this.setState(()=>({
