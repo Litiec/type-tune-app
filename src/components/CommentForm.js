@@ -18,19 +18,19 @@ export class CommentForm extends React.Component{
     
     onTextChange = (e)=>{ 
         const text = e.target.value;
+        const char = text[text.length-1].toLowerCase();
         const reg =/[a-z]|\d/;
-        if(e.target.value[text.length-1].match(reg)||e.target.value[text.length-1]===" "){
+        if(char.match(reg)||char ===" "){
             if(this.state.text.length<text.length){
-                this.soundManager.regEvents(text.charCodeAt(text.length-1))
+                this.soundManager.regEvents(char.charCodeAt(0))
                 this.setState(()=>({
                     text
                 }))
             }
         }
     }
-    onSubmit =(e, action)=>{
+    onSubmit =(e)=>{
         e.preventDefault();
-        //console.log(e.target.name);
         const username = this.props.auth.username;
         if(!this.state.text){
             const error = 'Please provide a comment!'
@@ -83,9 +83,8 @@ export class CommentForm extends React.Component{
                 <h2 className="heading-secondary">Comment</h2>
                 </div>
                 <div className="comment__share">
-                    <button name="share" className="btn  btn--blue" onClick={(e)=>{
-                        this.onSubmit(e,'shareComment')
-                    }}><svg x="0px" y="0px" viewBox="0 0 64 64" enableBackground="new 0 0 64 64"  stroke="#594389">
+                    <button name="share" className="btn  btn--blue " onClick={this.onSubmit}>
+                    <svg x="0px" y="0px" viewBox="0 0 64 64" enableBackground="new 0 0 64 64"  stroke="#594389">
                     <circle fill="none"  strokeWidth="3" strokeMiterlimit="10" cx="51" cy="13" r="12"/>
                     <circle fill="none"  strokeWidth="3" strokeMiterlimit="10" cx="11" cy="42" r="10"/>
                     <circle fill="none"  strokeWidth="3" strokeMiterlimit="10" cx="48" cy="55" r="8"/>
@@ -112,9 +111,7 @@ export class CommentForm extends React.Component{
                         <button 
                         name="submit"
                         className="btn btn--purple form__button"
-                        onClick ={(e)=>{
-                            this.onSubmit(e,'submitComment')
-                        }}>submit</button>
+                        onClick ={this.onSubmit}>submit</button>
                     </div>
                 </div>
                 </form>
