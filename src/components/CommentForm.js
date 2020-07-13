@@ -83,7 +83,7 @@ export class CommentForm extends React.Component{
                 <h2 className="heading-secondary">Comment</h2>
                 </div>
                 <div className="comment__share">
-                    <button name="share" className="btn  btn--blue " onClick={this.onSubmit}>
+                    <button name="share" title="Share the comment as a Guessing game" className="btn  btn--blue " onClick={this.onSubmit}>
                     <svg x="0px" y="0px" viewBox="0 0 64 64" enableBackground="new 0 0 64 64"  stroke="#594389">
                     <circle fill="none"  strokeWidth="3" strokeMiterlimit="10" cx="51" cy="13" r="12"/>
                     <circle fill="none"  strokeWidth="3" strokeMiterlimit="10" cx="11" cy="42" r="10"/>

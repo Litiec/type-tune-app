@@ -28,6 +28,8 @@ class GuessingLink extends React.Component{
         contentLabel="Copy Link"
         onRequestClose={this.props.onCloseModal}
         >
+        <h3 className="headind-3rd modal__heading" >Guessing Game</h3>
+        <h4 className="headind-4th modal__heading">Share the Comment and let your friend guess it</h4>
         {this.props.modalLink && <p className="modal__text" id="link">{this.props.modalLink}</p>}
         <div className="modal__button">
             <button className="btn btn--red" onClick={this.props.onCloseModal}>X</button>
