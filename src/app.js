@@ -41,7 +41,7 @@ const jsx =(
         <AppRouter/>
     </Provider>
 );
-ReactDOM.render(<p>Loading....</p>, document.getElementById('app'));
+ReactDOM.render(<p className="loading">Loading....</p>, document.getElementById('app'));
 
 
 firebase.auth().onAuthStateChanged((user)=>{
