@@ -156,6 +156,13 @@
         color:$font-color;
         padding: 1.5rem;
     }
+    &__btn{
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+        @include respond(phone){
+            font-size: 1.6rem;
+        }
+    }
     .comment-box{
         width:100%;
     }

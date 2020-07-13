@@ -113,8 +113,8 @@ class GuessingGame extends React.Component{
                 onChange={this.onTextChange}
                 disabled={this.state.msg||this.state.disabled}
                 ></textarea>
-                <button  className="btn btn--blue" disabled={this.state.disabled} onClick={this.handlePlayer}>{this.state.isPlaying ? 'Stop':'Play'}</button>
-                <button className="btn btn--purple" disabled={this.state.nrClue.length===3||this.state.disabled}onClick={this.giveClue}>Clue</button>
+                <button  className="btn btn--blue guessingGame__btn" disabled={this.state.disabled} onClick={this.handlePlayer}>{this.state.isPlaying ? 'Stop':'Play'}</button>
+                <button className="btn btn--purple guessingGame__btn" disabled={this.state.nrClue.length===3||this.state.disabled}onClick={this.giveClue}>Clue</button>
                 {this.state.textguessing && <p className="guessingGame__text">{this.state.textguessing}</p>}
                 {this.state.msg && <p className="heading-secondary">{this.state.msg}</p>}
                 </div>
