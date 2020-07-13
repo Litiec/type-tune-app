@@ -20,12 +20,14 @@ export class CommentForm extends React.Component{
         const text = e.target.value;
         const char = text[text.length-1].toLowerCase();
         const reg =/[a-z]|\d/;
-        if(char.match(reg)||char ===" "){
-            if(this.state.text.length<text.length){
-                this.soundManager.regEvents(char.charCodeAt(0))
-                this.setState(()=>({
-                    text
-                }))
+        if(text.length < this.state.text.length+2){
+            if(char.match(reg)||char ===" "){
+                if(this.state.text.length<text.length){
+                    this.soundManager.regEvents(char.charCodeAt(0))
+                    this.setState(()=>({
+                        text
+                    }))
+                }
             }
         }
     }
@@ -97,7 +99,7 @@ export class CommentForm extends React.Component{
                     <div className="col-3-of-4">
                         <div className="comment__box-container">
                             <div className="comment__box-container-layout"></div>
-                            <textarea  
+                            <textarea 
                             maxLength="100" cols="30" rows="3" 
                             className="comment-box" 
                             autoFocus 
